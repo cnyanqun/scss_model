@@ -1,0 +1,82 @@
+// 头部导航条
+// <div class="flowTit">
+//   <ul>
+//     <li class="liAct">
+//       <span class="symbol">1</span>
+//       <span class="flowName">商户信息</span>
+//     </li>
+//     <li class="">
+//       <span class="symbol">2</span>
+//       <span class="flowName">资质信息</span>
+//     </li>
+//     <li class="">
+//       <span class="symbol">3</span>
+//       <span class="flowName">收款信息</span>
+//     </li>
+//     <li class="">
+//       <span class="symbol">4</span>
+//       <span class="flowName">完成申请</span>
+//     </li>
+//   </ul>
+// </div>
+.flowTit {
+  width: $flowWidth;
+  margin: 0 auto;
+
+  .siteTopTit {
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    border-bottom: 2px solid $borderColor;
+  }
+
+  ul {
+    @include clearfix;
+    height: 50px;
+    padding: 0 2%;
+    border-bottom: 2px solid $borderColor;
+
+    li {
+      width: 25%;
+      float: left;
+      line-height: 50px;
+      text-align: center;
+      border-bottom: 2px solid $borderColor;
+
+      %span {
+        display: inline-block;
+      }
+
+      .symbol {
+        @extend %span;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        vertical-align: middle;
+        @include prefixer(border-radius, 50%);
+        background: $borderColor;
+        color: #fff;
+        font-size: 12px;
+      }
+
+      .flowName {
+        @extend %span;
+        text-indent: 5px;
+        color: #888;
+      }
+    }
+
+    .liAct {
+      border-color: $themeColor;
+
+      .symbol {
+        background: $themeColor;
+      }
+
+      .flowName {
+        color: #444;
+      }
+    }
+  }
+}

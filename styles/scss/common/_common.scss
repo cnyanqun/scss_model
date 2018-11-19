@@ -1,0 +1,211 @@
+// COMMON
+//----------FONT
+$fontMain: tahoma,
+arial,
+'Hiragino Sans GB',
+'\5b8b\4f53',
+sans-serif;
+$fontSec: Microsoft YaHei,
+Helvetica Neue,
+Helvetica,
+PingFang SC,
+Hiragino Sans GB,
+SimSun,
+sans-serif;
+$fontSymbol: 'Helvetica Neue',
+'Hiragino Sans GB',
+SimSun,
+serif;
+
+//----------COLOR
+$themeColor: #da3a3a;
+$backgroundColor: #f5f5f5;
+$borderColor: #dedede;
+$linkColor: #666;
+$linkHoverColor: #ff4843;
+$buttonColor: #333;
+$priceColor: #e01222;
+
+//-----------WIDTH
+$wrapWidth: 1200px;
+
+//-----------MARGIN
+$marginTop: 20px;
+$marginBottom: 15px;
+
+//-----------MIXIN
+//PREFIX
+// 默认将输出webkit前缀，moz前缀和标准
+@mixin prefixer($property, $value, $prefixes: webkit moz o ms) {
+  #{$property}: $value;
+
+  @each $prefix in $prefixes {
+    @if $prefix==webkit {
+      -webkit-#{$property}: #{$value};
+    }
+
+    @else if $prefix==moz {
+      -moz-#{$property}: #{$value};
+    }
+
+    @else if $prefix==o {
+      -o-#{$property}: #{$value};
+    }
+
+    @else if $prefix==ms {
+      -ms-#{$property}: #{$value};
+    }
+  }
+}
+
+//CLEAR
+@mixin clearfix {
+
+  &:after,
+  &:before {
+    height: 0;
+    display: block;
+    content: ' ';
+    clear: both;
+  }
+
+  zoom: 1;
+}
+
+//BUTTON
+@mixin button {
+  display: inline-block;
+  line-height: 16px;
+  padding: 5px 20px;
+  color: #fff;
+  background: $linkHoverColor;
+  font-family: $fontSec;
+  @include prefixer(border-radius, 3px);
+
+  &:hover {
+    background: #d8302c;
+  }
+}
+
+@mixin buttonTwo {
+  display: inline-block;
+  line-height: 16px;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  color: $buttonColor;
+  background: #fff;
+  font-family: $fontSec;
+  @include prefixer(border-radius, 5px);
+
+  &:hover {
+    color: $linkHoverColor;
+    border: 1px solid $linkHoverColor;
+  }
+}
+
+@mixin button3 {
+  border: none;
+  background: #da3a3a;
+  box-shadow: none;
+  display: inline-block;
+  padding: 8px 20px;
+  ;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  @include prefixer(border-radius, 5px);
+}
+
+//A-COLOR
+@mixin aColor {
+  color: $linkColor;
+
+  &:hover {
+    color: $linkHoverColor;
+  }
+}
+
+//TITTLE
+@mixin smTitle {
+  display: inline-block;
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+  font-weight: 600;
+  height: 14px;
+  border-left: 3px solid $themeColor;
+  line-height: 14px;
+  padding-left: 10px;
+}
+
+@mixin bgTitle {
+  font-size: 18px;
+  color: #2d000d;
+  height: 18px;
+  border-left: 4px solid $themeColor;
+  line-height: 18px;
+  padding-left: 10px;
+}
+
+//TRIANGLE
+@mixin triangle($fx:top,$size:10px,$color:#fff){
+	@if ($fx==top){
+		border-style:dashed dashed solid dashed;
+		border-color:transparent transparent $color transparent;
+	}
+	@if ($fx==right){
+		border-style:dashed dashed dashed solid;
+		border-color:transparent transparent transparent $color;
+	}
+	@if ($fx==bottom){
+		border-style:solid dashed dashed dashed;
+		border-color:$color transparent transparent transparent;
+	}
+	@if ($fx==left){
+		border-style:dashed solid dashed dashed;
+		border-color:transparent $color transparent transparent;
+	}
+  height:0;
+  width:0;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+	border-width:$size;
+}
+//ERROR-HINT
+@mixin errorHint {
+  min-height: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: 0 auto;
+  height: auto !important;
+
+  .errorMsg {
+    position: relative;
+    background: #ffebeb;
+    color: #e4393c;
+    border: 1px solid #faccc6;
+    padding: 3px 10px 3px 40px;
+    line-height: 15px;
+    height: auto;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      display: block;
+      margin-top: -8px;
+      width: 16px;
+      height: 16px;
+      overflow: hidden;
+      background: url('~/static/images/common/errorHint.png') no-repeat;
+    }
+  }
+}
+
+//-----------EXTEND@extend
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

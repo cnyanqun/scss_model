@@ -1,0 +1,206 @@
+/* CSS Document */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0 none;
+  display: block;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+u,
+b,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+input,
+textarea {
+  outline: 0 none;
+  border: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.popUpBox {
+  width: 500px;
+  height: 300px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.popUpBox .title {
+  color: #e30e0e;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.popUpBox .item {
+  zoom: 1;
+  padding: 10px 0;
+  line-height: 35px;
+}
+
+.popUpBox .item:after, .popUpBox .item:before {
+  height: 0;
+  display: block;
+  content: ' ';
+  clear: both;
+}
+
+.popUpBox .item .siteLeft {
+  float: left;
+  width: 25%;
+  text-align: right;
+}
+
+.popUpBox .item .siteLeft:after {
+  content: ":";
+  margin: 0 8px 0 2px;
+  position: relative;
+  top: -.5px;
+}
+
+.popUpBox .item .required:before {
+  display: inline-block;
+  margin-right: 4px;
+  content: "*";
+  font-family: SimSun;
+  line-height: 1;
+  font-size: 14px;
+  color: #f04134;
+}
+
+.popUpBox .item .siteRight {
+  float: right;
+  width: 60%;
+  margin-right: 15%;
+}
+
+.popUpBox .item .siteRight input {
+  width: 100px;
+  height: 33px;
+  border: 1px solid #eee;
+  text-indent: 6px;
+}
+
+.popUpBox .item .siteRight .sendMsg {
+  display: inline-block;
+  height: 33px;
+  line-height: 33px;
+  color: #888;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 0 8px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.popUpBox .item .siteRight .sendMsg:hover {
+  background: #f0f0f0;
+  color: #444;
+}
+
+.popUpBox .item .siteRight .hint {
+  color: #999;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.popUpBox .item .siteRight .login {
+  display: inline-block;
+  line-height: 16px;
+  padding: 5px 20px;
+  color: #fff;
+  background: #ff4843;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, SimSun, sans-serif;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+}
+
+.popUpBox .item .siteRight .login:hover {
+  background: #d8302c;
+}

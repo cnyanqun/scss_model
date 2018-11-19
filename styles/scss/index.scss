@@ -1,0 +1,80 @@
+@import "./common/common";
+@import "./basics/basics";
+
+.popUpBox {
+  width: 500px;
+  height: 300px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 15px;
+
+  .title {
+    color: #e30e0e;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .item {
+    @include clearfix;
+    padding: 10px 0;
+    line-height: 35px;
+
+    .siteLeft {
+      float: left;
+      width: 25%;
+      text-align: right;
+
+      &:after {
+        content: ":";
+        margin: 0 8px 0 2px;
+        position: relative;
+        top: -.5px;
+      }
+    }
+
+    .required:before {
+      display: inline-block;
+      margin-right: 4px;
+      content: "*";
+      font-family: SimSun;
+      line-height: 1;
+      font-size: 14px;
+      color: #f04134;
+    }
+
+    .siteRight {
+      float: right;
+      width: 60%;
+      margin-right: 15%;
+      input{
+        width: 100px;
+        height: 33px;
+        border: 1px solid #eee;
+        text-indent: 6px;
+      }
+      .sendMsg{
+        display: inline-block;
+        height: 33px;
+        line-height: 33px;
+        color: #888;
+        background-color: #f9f9f9;
+        border: 1px solid #eee;
+        padding: 0 8px;
+        margin-left: 5px;
+        cursor: pointer;
+        &:hover{
+          background: #f0f0f0;
+          color: #444;
+        }
+      }
+      .hint{
+        color: #999;
+        line-height: 20px;
+        margin-top: 10px;
+      }
+      .login{
+        @include button;
+      }
+    }
+  }
+}
